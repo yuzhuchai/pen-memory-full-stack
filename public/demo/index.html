@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js example</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+
+    <!-- this is the main container for selecting tools -->
+    <div id='mainContainer'>
+
+        <div id='selectorContainer' class='sectionContainer largeContainer'>
+          <!-- <h3>select your brush!</h3> -->
+            
+<!-- select words -->
+            <div>
+              <label for='pen'>pen</label>
+              <input type="text" id="pen" class='word' placeholder="" />
+            </div>
+
+<!-- select color -->
+            <div>
+              <label for='color'>color</label>
+              <input type="color" id="color" class='color' value="#0000ff"/>
+            </div>
+
+
+<!-- select the style of the text -->
+            <div>
+              <label for='style1'>N</label>
+              <input id='style1' class='style' type="radio" name="style" value="NORMAL" checked/>
+
+              <label for='style2'>B</label>
+              <input id='style2' class='style' type="radio" name="style" value="BOLD"/>
+
+              <label for='style3'>I</label>
+              <input id='style3' class='style' type="radio" name="style" value="ITALIC"/>
+            </div>
+
+<!-- select size -->
+            <div>
+              <label for='size'>pen-size</label>
+              <input type="range" id="size" min="0" max="100" value="20" />
+            </div>
+
+            <div id='seperator'> </div>
+<!-- select the movement function can only be one-->
+            <div>
+              <span>movements<br/></span>
+              <div id='movements'>
+                <input type="radio" name="movement" id='none' value="none" checked>
+                <label for='none'>none</label>
+              </div>
+              <div>
+                <input type="radio" name="movement" id='fallSelect' value='fall'>
+                <label for='fallSelect'>fall</label>
+              </div>
+              <div>
+                <input type="radio" name="movement" id='floatSelect' value='flaot'>
+                <label for='floatSelect'>float</label>
+              </div>
+              <div>
+                <input type="radio" name="movement" id='danceSelect' value='dance'>
+                <label for='danceSelect'>dance</label>
+              </div>
+              <div>
+                <input type="radio" name="movement" id='bombSelect' value='bomb'>
+                <label for='bombSelect'>bomb</label>
+              </div>
+              <div>
+                <input type="radio" name="movement" id='blinkSelect' value='blink'>
+                <label for='blinkSelect'>blink</label>
+              </div>
+
+            </div>
+
+<!-- select the rate of dropping -->
+            <div>
+              <label for='rate'>movement-rate</label>
+              <input type="range" id="rate" min="10" max="50" value="30" />
+            </div>
+
+
+            <div>
+
+               <button onClick='submit()'>write</button> 
+            </div>
+
+            <!-- every select will append a word to the select tab-->
+        </div>
+
+
+        <div class='sectionContainer largeContainer'>
+          <div>
+              <!-- <label for='word'></label> -->
+              <input type="text" class="word" id='word' placeholder="" />
+              <button class='textapply' onClick='changeWord()'>replace</button>
+          </div>
+        </div>
+
+
+        <div class='sectionContainer smallContainer'>
+            <div>
+              <button onClick='undo()'>erase</button>
+            </div>
+        </div>
+
+
+        <div class='sectionContainer smallContainer'>
+          <div>
+              <!-- <label for='color1'>replace</label> -->
+              <input type="color" id="color1" class='color' value="#0000ff"/>
+            </div>
+            <div>
+              <button class='color' onClick='changeColor()'>replace</button>
+          </div>
+        </div>
+
+        <div class='sectionContainer smallContainer'>
+            <div> 
+              memories
+              <select id='history'>
+              </select>
+            </div>
+            <div>
+              <button onClick='selectHistroy()'>write</button>
+            </div>
+        </div>
+
+
+        <div class='sectionContainer'>
+          <div>
+            <button onClick='camera()'>camera</button>
+          </div>
+        </div> 
+
+      </div>
+    </div>
+
+
+    <script>
+
+        // adding a event listener so that enter key will create the brush 
+
+        $('.sectionContainer').hover(
+          function (){
+            dontDraw = true
+            // console.log(dontDraw);
+          }, 
+          function (){
+            dontDraw = false 
+            // console.log(dontDraw);
+          }
+        )
+
+        $(document).on('keydown', (e) => {
+          // console.log(e); 
+          if(e.key ==='Enter'){
+            submit()
+          }else if (e.key ==='Tab'){
+            if($('.sectionContainer').css('display')==='none'){
+              $('.sectionContainer').css({'display':'inline-block'})  
+            } else {
+              $('.sectionContainer').css({'display':'none'})  
+            }
+          }
+        })
+    </script>
+  </body>
+</html>

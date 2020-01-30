@@ -1,0 +1,82 @@
+body {
+	background: black;
+	color: white;	
+	font-size: 1.2em;
+}
+
+
+canvas {
+	/*border: white 3px solid;*/
+	position: relative;
+	left: 30vw;
+	width: 50vw;
+	height: 90vh;
+	/*cursor: crosshair;*/
+	cursor: none;
+	/*z-index: -1;*/
+}
+
+
+.sectionContainer{
+	border: rgba(255,255,255,0.5) 3px solid;
+	padding: 10px;
+	/*padding-top: 0;*/
+	display: inline-block;		
+	display: none;
+	margin: 10px;
+	border-radius: 10px;
+	z-index: 10000;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.sectionContainer > div {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+
+/*.sectionContainer > button {
+	margin-top: 10px;
+}*/
+
+/*input{
+	margin-right: 10px;
+	margin-left: auto; 
+}*/
+
+
+#mainContainer {
+	padding: 10px;
+	display: flex;
+	width: 30vw;
+	height: 100vh;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+}
+
+#hearts {
+	display: inline-block;
+	display: none;
+}
+
+
+.color{
+	/*position: relative;*/
+	margin-right: 10px;
+	margin-left: auto;
+	/*float: right;*/
+}
+
+
+#seperator{
+	border-top:rgba(255,255,255,0.5) 3px solid;
+	/*width: 90%;*/
+}
+
+
+#selectorContainer{
+	width: 100%;
+}
+
