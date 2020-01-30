@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const History = require('./models/history')
-
+const historyController = require('./controllers/historyController')
 
 
 const db = require('./db/db')
@@ -13,9 +13,12 @@ app.use(express.static('public'))
 
 
 
-app.get("/",(req,res)=>{
-	res.redirect("/demo")
-})
+app.use("/", historyController)
+
+// serving the static demo page
+// app.get("/",(req,res)=>{
+// 	res.redirect("/tool")
+// })
 
 
 app.listen(3000, () => {

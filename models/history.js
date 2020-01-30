@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const historySchema = new mongoose.Schema({
 	word: String,
-	color: Object,
+	color: String,
 	size: Number,
 	fallSelect: Boolean,
 	floatSelect: Boolean,

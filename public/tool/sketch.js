@@ -1,4 +1,3 @@
-	
 let wordAttr = {
 	word: '',
 	// word: 'pen, memory',
