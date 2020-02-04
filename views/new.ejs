@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>p5.js example</title>
     <style> body {padding: 0; margin: 0;} </style>
-    <link rel="stylesheet" type="text/css" href="/tool/style.css">
+    <link rel="stylesheet" type="text/css" href="tool/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
     <script src="/tool/sketch.js"></script>
@@ -17,17 +17,17 @@
 
         <div id='selectorContainer' class='sectionContainer largeContainer'>
           <!-- <h3>select your brush!</h3> -->
-            
+    
 <!-- select words -->
             <div>
               <label for='pen'>pen</label>
-              <input type="text" id="pen" class='word' placeholder="" />
+              <input type="text" id="pen" class='word' name='word' value='' placeholder="" />
             </div>
 
 <!-- select color -->
             <div>
               <label for='color'>color</label>
-              <input type="color" id="color" class='color' value="#0000ff"/>
+              <input type="color" id="color" class='color' name='color' value="#0000ff"/>
             </div>
 
 
@@ -46,7 +46,7 @@
 <!-- select size -->
             <div>
               <label for='size'>pen-size</label>
-              <input type="range" id="size" min="0" max="100" value="20" />
+              <input type="range" id="size" name='size' min="0" max="100" value="20" />
             </div>
 
             <div id='seperator'> </div>
@@ -83,7 +83,7 @@
 <!-- select the rate of dropping -->
             <div>
               <label for='rate'>movement-rate</label>
-              <input type="range" id="rate" min="10" max="50" value="30" />
+              <input type="range" id="rate" min="10" max="50" name='range' value="30" />
             </div>
 
 
@@ -136,16 +136,28 @@
 
         <div class='sectionContainer'>
           <div>
-           <a href='/upload'>upload</a>
-          </div>
-          <div>
-            <a>go to home page</a>
+            <button onClick='upload()'>camera</button>
           </div>
         </div> 
 
-      </div>
-    </div>
 
+
+
+        <!-- <a href="/upload" onClick='hi()'>upload drawing</a> -->
+      </div>
+    </div>   
+    <!-- this is the end of the main continer -->
+
+    <!-- this is the biginning of the upload container,  -->
+    <div id='uploadForm'>
+    	<form id='uploadForm_form' action='/upload' method='POST'>
+    		
+    		<input type="text" name="story">
+        <!-- <input id='historyBrushes' type='textarea' name='historyBrushes'> -->
+        <button>upload</button>
+    	</form>
+    </div>
+    <!-- this is the end of the upload container -->
 
     <script>
 
@@ -162,11 +174,16 @@
           }
         )
 
-        $(document).on('keydown', (e) => {
-          // console.log(e); 
-          if(e.key ==='Enter'){
+
+        $('#mainContainer').on('keydown',(e) => {
+          if(e.key === 'Enter'){
             submit()
-          }else if (e.key ==='Tab'){
+          }
+        })
+        
+
+        $(document).on('keydown', (e) => {
+          if (e.key ==='Tab'){
             if($('.sectionContainer').css('display')==='none'){
               $('.sectionContainer').css({'display':'inline-block'})  
             } else {

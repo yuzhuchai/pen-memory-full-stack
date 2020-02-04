@@ -1,3 +1,4 @@
+console.log('linked');
 let wordAttr = {
 	word: '',
 	// word: 'pen, memory',
@@ -122,6 +123,7 @@ function submit(){
 
 	// this is getting the value of the select tab.
 	$('#history').append(`<option value=${i}>${wordAttr.word}</option>`)
+
 	let newHistory = {
 		// edit code when new function is created here!
 		color:wordAttr.color,
@@ -138,6 +140,9 @@ function submit(){
 	}
 	history.push(newHistory)
 	i++
+
+	createHistoryObj(wordAttr, i)
+
 }
 
 
@@ -370,9 +375,24 @@ function undo(){
 
 
 // this function takes a screenshot of the canvas
+// this function will be call everytime a brush is selected, creating a json object for each object
+function createHistoryObj(wordAttr, i){
+	const historyJSON = JSON.stringify(wordAttr)
+	console.log(historyJSON);
+	// $('#uploadForm_form').prepend(`<input name='history${i}' value=${historyJSON} type='text'></input>`)
+	// $('#historyBrushes').val(historyJSON)
+}
+
+
+
 
 // bug: doesn't seem to work
-function camera(){
-	saveCanvas('photo', 'jpg')
+function upload(){
+	const upAsJsonString = JSON.stringify(history)
+	// console.log(upAsJsonString);
+	$('#uploadForm_form').prepend(`<input name='historyUpload' value=${upAsJsonString} type='text'></input>`)
+	$('#mainContainer').css({'display':'none'})
+	$('canvas').css({'display':'none'})
+	$('#uploadForm').css({'display':'block'})
 }
 
