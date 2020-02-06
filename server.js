@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express()
-const History = require('./models/history')
-const historyController = require('./controllers/historyController')
+const Drawing = require('./models/drawing')
+const drawingController = require('./controllers/drawingController')
 
 
 const db = require('./db/db')
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'))
 	
 
-app.use("/", historyController)
+app.use("/", drawingController)
 
 // serving the static demo page
 // app.get("/",(req,res)=>{

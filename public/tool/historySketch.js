@@ -1,0 +1,1 @@
+console.log('histoy page linked');

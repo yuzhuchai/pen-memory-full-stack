@@ -1,1 +1,19 @@
-hi
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/tool/style.css">
+	<title></title>
+</head>
+<body>
+
+	<%drawings.map(drawing=>{ %>
+
+		stroy: <%=drawing.story%>
+		<!-- <button action='/' method='get'>go to drawing</button> -->
+
+		<a href='/<%=drawing._id%>'>go to the drawing</a>
+
+	<% })%>
+
+</body>
+</html>
