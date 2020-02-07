@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="/tool/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<title></title>
 </head>
 <body>
@@ -21,16 +22,45 @@
 	<!-- this is the div for individual stories -->
 
 		<div id='indexStoriesContainer'>
-			<%drawings.map(drawing=>{ %>
+			<%drawings.map((drawing, i)=>{ %>
 				<div class='indexStory'>
 					<h2><i>by: <%=drawing.user%></i></h2>
-					<p><%=drawing.story%></p><br/>
+					<p>
+						<%=drawing.story.slice(0,10)%>
+
+						<!-- <button > show more </button> -->
+						<span class='indexSpan' id='span<%=i%>'><%=drawing.story.slice(10)%></span>
+					</p><br/>
+					<a class='indexA' id='button<%=i%>'>show more</a>
 					<a href='/<%=drawing._id%>'>draw</a>
 				</div>
 			<% })%>
 		</div>
 
-
 	<div> 
+
+	<script>
+
+		let buttons = $('.indexA')
+		// console.log(buttons);
+		for (let i = 0; i < buttons.length; i++){
+			// console.log(buttons[i]);
+			$(`#button${i}`).on('click',() => {
+				// console.log(i);
+				let display = $(`#span${i}`).css('display')
+				if(display === 'none'){
+					// console.log($(`#button${i}`));
+					$(`#span${i}`).css({'display':'inline-block'})
+					$(`#button${i}`).text('show less')
+				} else {
+					$(`#span${i}`).css({'display':'none'})
+					$(`#button${i}`).text('show more')
+				}
+				// console.log(display);
+			})
+		}
+	</script>
+		
+		
 </body>
 </html>

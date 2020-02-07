@@ -134,3 +134,8 @@ canvas {
 	padding: 10px;
 	padding-bottom: 20px;
 }
+
+
+.indexSpan{
+	display: none;
+}

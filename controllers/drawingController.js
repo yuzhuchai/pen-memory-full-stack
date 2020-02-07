@@ -75,6 +75,7 @@ router.delete('/:id', (req,res)=>{
 		if(err){
 			res.send(err)
 		} else {
+			res.send(drawing.user + ' deleted')
 			console.log(drawing.user + ' deleted');
 		}
 	})
