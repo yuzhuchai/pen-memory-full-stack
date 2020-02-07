@@ -94,8 +94,13 @@ function selectHistory(){
 	// console.log('this is working, clicked');
 	let val = $('#selectBrush').val()
 	let parsedVal = JSON.parse(val)
-	console.log(parsedVal,'<-----parsed val');
+	// console.log(parsedVal,'<-----parsed val');
 	wordAttr = parsedVal
+	let rgbColor = parsedVal.color.levels
+	// console.log(rgbColor,'<-----this is the color in rgb');
+	// wordAttr.color = rgbColor 
+	wordAttr.color = color(rgbColor[0], rgbColor[1], rgbColor[2])
+	console.log(wordAttr.color,'<-------new color ');
 }
 
 
@@ -103,7 +108,7 @@ function selectHistory(){
 
 // this function draws the simple word
 function simpleWord (){
-	this.color = wordAttr.color 
+	this.colorSelect = wordAttr.color 
 	this.alpha = wordAttr.alpha
 	this.word = wordAttr.word
 	this.size = wordAttr.size 
@@ -115,9 +120,9 @@ function simpleWord (){
 		// do nothing 
 	}
 	this.display = function(){
-		this.color.setAlpha(this.alpha)
+		this.colorSelect.setAlpha(this.alpha)
 
-		fill(this.color)
+		fill(this.colorSelect)
 		textSize(this.size)
 		textStyle(this.style)
 		text(this.word, this.x, this.y)

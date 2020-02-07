@@ -33,6 +33,19 @@
 
 	<script>
 		
+
+        $('.sectionContainer').hover(
+          function (){
+            dontDraw = true
+            // console.log(dontDraw);
+          }, 
+          function (){
+            dontDraw = false 
+            // console.log(dontDraw);
+          }
+        )
+
+		
 		$(document).on('keydown', (e) => {
           if (e.key ==='Tab'){
             if($('.sectionContainer').css('display')==='none'){
