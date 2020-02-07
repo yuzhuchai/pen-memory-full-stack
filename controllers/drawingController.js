@@ -71,7 +71,13 @@ router.get('/:id', (req,res)=>{
 
 // need a delete route for admin
 router.delete('/:id', (req,res)=>{
-	
+	Drawing.findByIdAndDelete(req.params.id, (err, drawing) => {
+		if(err){
+			res.send(err)
+		} else {
+			console.log(drawing.user + ' deleted');
+		}
+	})
 })
 
 
