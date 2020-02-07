@@ -6,15 +6,31 @@
 </head>
 <body>
 
-	<%drawings.map(drawing=>{ %>
 
-		stroy: <%=drawing.story%>
-		<!-- <button action='/' method='get'>go to drawing</button> -->
+	<div id='indexMainContainer'>
 
-		<a href='/<%=drawing._id%>'>go to the drawing</a>
-		<a href='/'>make your own drawings</a>
+	<!-- this is a paragraph, explaining the tool? -->
 
-	<% })%>
+		
+		<div id='indexIntro'>
+			<p><i><h1>Pen, Memory</h1></i> is a drawing instrument.</p>
+			<p>the following stories are <i>memories</i> of other people who used the tool. Feel free to read the story and create your own version of the drawing. Or, you can <a href='/'>make your own drawings</a> </p>
+		</div>
 
+
+	<!-- this is the div for individual stories -->
+
+		<div id='indexStoriesContainer'>
+			<%drawings.map(drawing=>{ %>
+				<div class='indexStory'>
+					<h2><i>by: <%=drawing.user%></i></h2>
+					<p><%=drawing.story%></p><br/>
+					<a href='/<%=drawing._id%>'>draw</a>
+				</div>
+			<% })%>
+		</div>
+
+
+	<div> 
 </body>
 </html>

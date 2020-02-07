@@ -1,8 +1,8 @@
 console.log('histoy page linked');
 
 let wordAttr = {
-	word: '',
-	// word: 'pen, memory',
+	// word: '',
+	word: 'pen, memory',
 	// color: '',
 	size: 40,
 // edit code when new function is created here!

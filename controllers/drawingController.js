@@ -25,7 +25,7 @@ router.post('/upload', async (req,res)=>{
 			res.send(err)
 		} else {
 			console.log(drawing,'<----this drawing');
-			res.redirect('/show')
+			res.redirect('/index')
 		}
 	})
 })
@@ -33,7 +33,7 @@ router.post('/upload', async (req,res)=>{
 
 
 // this route gets all the individual drawings, and display them on the page
-router.get('/show', (req,res)=>{
+router.get('/index', (req,res)=>{
 	Drawing.find({}, (err, drawings) => {
 		// let newDrawings = []
 		console.log(drawings,'<----this is drawings in the find');
@@ -70,6 +70,9 @@ router.get('/:id', (req,res)=>{
 
 
 // need a delete route for admin
+router.delete('/:id', (req,res)=>{
+	
+})
 
 
 module.exports = router

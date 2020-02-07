@@ -86,12 +86,51 @@ canvas {
 
 
 
-
 #uploadForm{
 	display: none;
 }
 
 
-#historyInput{
-	/*display: none;*/
+
+/*the following are styling for the index page*/
+#indexMainContainer{
+	padding: 1.5em;
+}
+
+
+
+#indexIntro > h1{
+	display: inline-block;
+	text-align: justify;
+}
+
+
+#indexStoriesContainer {
+	/*border: rgba(255,255,255,0.5) 3px solid;*/
+	padding: 2em;
+	color: cornflowerblue;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+
+
+#indexStoriesContainer > div > a{
+	color: white;
+	text-decoration: none;
+	border: white 1px solid;
+	border-radius: 5px;
+	padding: .3em;
+}
+
+
+.indexStory{
+	margin-bottom: 30px;
+	display: inline-block;
+	width: 40vw;
+	border: rgba(255,255,255,0.2) 3px solid;
+	padding: 10px;
+	padding-bottom: 20px;
 }
