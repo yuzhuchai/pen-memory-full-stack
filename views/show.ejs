@@ -26,10 +26,14 @@
 				<% })%>
 			</select>
 			<button onclick='selectHistory()'>select</button>
+		
+		<div>
+			<a href='/show'>back to home page</a>
 		</div>
+		</div>
+		
 	</div>
 
-	
 
 	<script>
 		
@@ -45,7 +49,7 @@
           }
         )
 
-		
+
 		$(document).on('keydown', (e) => {
           if (e.key ==='Tab'){
             if($('.sectionContainer').css('display')==='none'){
