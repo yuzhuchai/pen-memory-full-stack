@@ -12,8 +12,40 @@
   </head>
   <body>
 
-showpage
-<%=brushes[0].size%>
+
+	<div id='mainContainer'>
+		<div class='sectionContainer'>
+			<%=story%>
+		</div>
+		<div class='sectionContainer'>
+			<select id='selectBrush'>
+				<% brushes.map(brush => { %>
+					<option value=<%=JSON.stringify(brush)%>>
+						<%=brush.word%>
+					</option>
+				<% })%>
+			</select>
+			<button onclick='selectHistory()'>select</button>
+		</div>
+	</div>
+
+	
+
+	<script>
+		
+		$(document).on('keydown', (e) => {
+          if (e.key ==='Tab'){
+            if($('.sectionContainer').css('display')==='none'){
+              $('.sectionContainer').css({'display':'inline-block'})  
+            } else {
+              $('.sectionContainer').css({'display':'none'})  
+            }
+          }
+        })
+
+	</script>
+	
+
 
 </body>
 </html>

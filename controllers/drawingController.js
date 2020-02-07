@@ -59,7 +59,8 @@ router.get('/:id', (req,res)=>{
 			res.send(err)
 		} else {
 			res.render('show.ejs',{
-				brushes: brushes 
+				brushes: brushes,
+				story: drawing.story
 			})
 		}
 	})

@@ -4,6 +4,10 @@ body {
 	font-size: 1.2em;
 }
 
+a {
+	color: cornflowerblue;
+}
+
 
 canvas {
 	/*border: white 3px solid;*/
