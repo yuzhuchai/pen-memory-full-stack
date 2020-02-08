@@ -388,11 +388,15 @@ function createHistoryObj(wordAttr, i){
 
 // bug: doesn't seem to work
 function upload(){
-	const upAsJsonString = JSON.stringify(history)
-	// console.log(upAsJsonString);
-	$('#uploadForm_form').prepend(`<input name='historyUpload' value=${upAsJsonString} type='text'></input>`)
-	$('#mainContainer').css({'display':'none'})
-	$('canvas').css({'display':'none'})
-	$('#uploadForm').css({'display':'block'})
+	if(!history.length){
+		alert('please upload a drawing')
+	} else {
+		const upAsJsonString = JSON.stringify(history)
+		// console.log(upAsJsonString);
+		$('#uploadForm_form').prepend(`<input name='historyUpload' value=${upAsJsonString} type='text'></input>`)
+		$('#mainContainer').css({'display':'none'})
+		$('canvas').css({'display':'none'})
+		$('#uploadForm').css({'display':'block'})
+	}
 }
 
