@@ -80,15 +80,12 @@ function draw(){
 
 
 
-
-
-
 function selectHistory(){
 	wordAttr.floatSelect = false;
 	wordAttr.fallSelect = false;
 	wordAttr.danceSelect = false;
 	wordAttr.blinkSelect = false;
-	dontDraw = true;
+	dontDraw = false;
 
 
 	// console.log('this is working, clicked');
@@ -100,7 +97,7 @@ function selectHistory(){
 	// console.log(rgbColor,'<-----this is the color in rgb');
 	// wordAttr.color = rgbColor 
 	wordAttr.color = color(rgbColor[0], rgbColor[1], rgbColor[2])
-	console.log(wordAttr.color,'<-------new color ');
+	// console.log(wordAttr.color,'<-------new color ');
 
 	$('.sectionContainer').css({'display':'none'})
 }

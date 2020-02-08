@@ -12,12 +12,23 @@
   </head>
   <body>
 
+    <div class='ruleContainer' id='ruleShow'>
+      <button id='closeShow'>X</button>
+      <p>
+          <span class='user'>read a story, make a drawing.</span><br/>
+          press <span class='ruleSpan'>tab</span> to display/hide tool bar.<br/> 
+          the <span class='ruleSpan'>pens</span> are used by <span class='user'><%=user%></span>, when they created the drawing, the words may or may not have a clear realtionship with the story itself.<br/>
+          pick a pen, and re-<span class='ruleSpan'>write</span> the story with a drawing.      
+      </p>
+    </div>
+
 
 	<div id='mainContainer'>
 		<div class='sectionContainer'>
 			<%=story%>
 		</div>
 		<div class='sectionContainer'>
+      pens:
 			<select id='selectBrush'>
 				<% brushes.map(brush => { %>
 					<option value=<%=JSON.stringify(brush)%>>
@@ -25,7 +36,7 @@
 					</option>
 				<% })%>
 			</select>
-			<button onclick='selectHistory()'>select</button>
+			<button onclick='selectHistory()'>write</button>
 		
     </div>
 		<div class='sectionContainer'>
@@ -61,6 +72,10 @@
           } 
         })
 
+    $('#closeShow').on('click',() => {
+            $('#ruleShow').css({'display':'none'})
+        
+    })
 
 	</script>
 	

@@ -13,10 +13,10 @@
   <body>
 
 
-    <div id='ruleContainer'>
+    <div class='ruleContainer' id='ruleNew'>
       <button id='close'>X</button>
       <p>
-          make a drawing, write a story.<br/>
+          <span class='user'>make a drawing, write a story.</span><br/>
           press <span class='ruleSpan'>tab</span> to display/hide tool bar.<br/> 
           after selecting the basic pen functions, click <span class='ruleSpan'>write</span> to use pen.<br/>
           click <span class='ruleSpan'>replace</span> to replace the drawing with one color or word.<br/>
@@ -218,11 +218,11 @@
 
 
         $('#howTO').on('click', () => {
-          $('#ruleContainer').css({'display':'block'})
+          $('#ruleNew').css({'display':'block'})
         })
 
         $('#close').on('click',() => {
-            $('#ruleContainer').css({'display':'none'})
+            $('#ruleNew').css({'display':'none'})
         })
 
         $('#closeForm').on('click',() => {

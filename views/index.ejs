@@ -7,37 +7,44 @@
 </head>
 <body>
 
-
-	<div id='indexMainContainer'>
+	<div id='pageContainer'>
+		<div id='indexMainContainer'>
 
 	<!-- this is a paragraph, explaining the tool? -->
 
 		
-		<div id='indexIntro'>
-			<p><i><h1>Pen, Memory</h1></i> is a drawing instrument.</p>
-			<p>the following stories are <i>memories</i> of other people who used the tool. Feel free to read the story and create your own version of the drawing. Or, you can <a href='/'>make your own drawings</a> </p>
+			<div id='indexIntro'>
+				<p><i><h1>Pen, Memory</h1></i> is a drawing instrument.</p>
+				<p>the following stories are <i>memories</i> of other people who used the tool. Feel free to read the story and create your own version of the drawing. Or, you can <a href='/'>make your own drawings</a> </p>
+			</div>
+
+
+		<!-- this is the div for individual stories -->
+
+			<div id='indexStoriesContainer'>
+				<%drawings.map((drawing, i)=>{ %>
+					<div class='indexStory'>
+						<h2><i>by: <%=drawing.user%></i></h2>
+						<p>
+							<%=drawing.story.slice(0,60)%>
+
+							<!-- <button > show more </button> -->
+							<span class='indexSpan' id='span<%=i%>'><%=drawing.story.slice(60, 150)%></span><span class='user'>...</span>
+						</p><br/>
+						<a class='indexA' id='button<%=i%>'>show more</a>
+						<a href='/<%=drawing._id%>'>draw</a>
+					</div>
+				<% })%>
+			</div>	
+
+		</div>
+
+		<div id='footer'>
+			<p>©2020 Yuzhu Chai. All rights served</p>
 		</div>
 
 
-	<!-- this is the div for individual stories -->
-
-		<div id='indexStoriesContainer'>
-			<%drawings.map((drawing, i)=>{ %>
-				<div class='indexStory'>
-					<h2><i>by: <%=drawing.user%></i></h2>
-					<p>
-						<%=drawing.story.slice(0,60)%>
-
-						<!-- <button > show more </button> -->
-						<span class='indexSpan' id='span<%=i%>'><%=drawing.story.slice(60)%></span>
-					</p><br/>
-					<a class='indexA' id='button<%=i%>'>show more</a>
-					<a href='/<%=drawing._id%>'>draw</a>
-				</div>
-			<% })%>
-		</div>
-
-	<div> 
+	</div>
 
 	<script>
 

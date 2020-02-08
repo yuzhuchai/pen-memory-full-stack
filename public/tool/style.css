@@ -162,7 +162,7 @@ canvas {
 
 
 
-#ruleContainer{
+.ruleContainer{
 	position: absolute;
 	display: block;
 	border: rgba(255,255,255,0.2) 3px solid;
@@ -170,7 +170,7 @@ canvas {
 	color: cornflowerblue;
 	z-index: 100000;
 	width: 60vw;
-	min-height: 60vh;
+	min-height: 40vh;
 	left: 20vw;
 	top: 20vh;
 	background-color: rgba(0,0,0,0.9);
@@ -198,4 +198,24 @@ canvas {
 	left: 10px;
 	padding: .3em;
 	border-radius: 5px;
+}
+
+
+.user{
+	color: white;
+}
+
+
+#pageContainer {
+	min-height:100vh;
+}
+
+#footer{
+	color: rgba(255,255,255,0.8);
+	font-size: 0.7em;
+	font-family: Arial, Helvetica, sans-serif;;
+	position: absolute;
+	text-align: center;
+	width:100%;
+	bottom: 0;
 }

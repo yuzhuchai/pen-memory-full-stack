@@ -60,7 +60,8 @@ router.get('/:id', (req,res)=>{
 		} else {
 			res.render('show.ejs',{
 				brushes: brushes,
-				story: drawing.story
+				story: drawing.story,
+				user: drawing.user
 			})
 		}
 	})
