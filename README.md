@@ -2,5 +2,3 @@
 
 
 
-<!-- bug: when word end with empty space, does not work -->
-
