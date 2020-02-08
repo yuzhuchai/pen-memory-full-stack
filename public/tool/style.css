@@ -4,11 +4,21 @@ body {
 	font-size: 1.2em;
 }
 
+input, textarea, select{
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+}
+
 a {
 	color: cornflowerblue;
 }
 
-
+button{
+	background-color: black;
+	border-radius: 5px;
+	color: white;
+	border: white 1px solid;
+}
 canvas {
 	/*border: white 3px solid;*/
 	position: relative;
@@ -88,8 +98,27 @@ canvas {
 
 #uploadForm{
 	display: none;
+	position: absolute;
+	border: rgba(255,255,255,0.2) 3px solid;
+	border-radius: 5px;
+	color: cornflowerblue;
+	z-index: 100000;
+	width: 60vw;
+	min-height: 60vh;
+	left: 20vw;
+	top: 20vh;
+	background-color: rgba(0,0,0,0.9);
+	font-style: bolder;
+	font-size: 1.2em;
+	padding: 20px;
+	line-height: 1.9em;
+	/*text-align: center;*/
 }
 
+
+#uploadForm > form > div {
+	margin-bottom: 20px;
+}
 
 
 /*the following are styling for the index page*/
@@ -133,6 +162,7 @@ canvas {
 	border: rgba(255,255,255,0.2) 3px solid;
 	padding: 10px;
 	padding-bottom: 20px;
+	border-radius: 20px;
 }
 
 

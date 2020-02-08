@@ -13,18 +13,18 @@
   <body>
 
 
-        <div id='ruleContainer'>
-          <button id='close'>X</button>
-          <p>
-              make a drawing, write a story.<br/>
-              press <span class='ruleSpan'>tab</span> to display/hide tool bar.<br/> 
-              after selecting the basic pen functions, click <span class='ruleSpan'>write</span> to use pen.<br/>
-              click <span class='ruleSpan'>replace</span> to replace the drawing with one color or word.<br/>
-              click <span class='ruleSpan'>erase</span> to undo.<br/>
-              use <span class='ruleSpan'>memories</span> to see history.<br/>
-              <span class='ruleSpan'>upuload</span> your pens and a story for others to use.
-          </p>
-        </div>
+    <div id='ruleContainer'>
+      <button id='close'>X</button>
+      <p>
+          make a drawing, write a story.<br/>
+          press <span class='ruleSpan'>tab</span> to display/hide tool bar.<br/> 
+          after selecting the basic pen functions, click <span class='ruleSpan'>write</span> to use pen.<br/>
+          click <span class='ruleSpan'>replace</span> to replace the drawing with one color or word.<br/>
+          click <span class='ruleSpan'>erase</span> to undo.<br/>
+          use <span class='ruleSpan'>memories</span> to see history.<br/>
+          <span class='ruleSpan'>upuload</span> your pens and a story for others to use.
+      </p>
+    </div>
     <!-- this is the main container for selecting tools -->
     <div id='mainContainer'>
 
@@ -168,10 +168,15 @@
     <!-- this is the biginning of the upload container,  -->
     <div id='uploadForm'>
     	<form id='uploadForm_form' action='/upload' method='POST'>
-    	
-    		input your story: <input type="textarea" name="story">
-        input your username: <input type='text' name='user'>
-        <!-- <input id='historyBrushes' type='textarea' name='historyBrushes'> -->
+        <div>
+    	   <i>(these are the history of your pen, you cannot edit them)</i>
+       </div>
+      <div>
+        write down your name <input type='text' name='user'>
+      </div>
+       <div>
+        write down your story <textarea name="story" rows="10" cols="50"></textarea>
+      </div>
         <button>upload</button>
     	</form>
     </div>
