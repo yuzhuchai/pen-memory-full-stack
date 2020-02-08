@@ -114,6 +114,7 @@ canvas {
 /*the following are styling for the index page*/
 #indexMainContainer{
 	padding: 1.5em;
+	min-height: 100vh;
 }
 
 
@@ -206,11 +207,11 @@ canvas {
 }
 
 
-#pageContainer {
+/*#pageContainer {
 	min-height:100vh;
-}
+}*/
 
-#footer{
+#footer {
 	color: rgba(255,255,255,0.8);
 	font-size: 0.7em;
 	font-family: Arial, Helvetica, sans-serif;;
