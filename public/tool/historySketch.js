@@ -85,7 +85,7 @@ function selectHistory(){
 	wordAttr.fallSelect = false;
 	wordAttr.danceSelect = false;
 	wordAttr.blinkSelect = false;
-	dontDraw = false;
+	dontDraw = true;
 
 
 	// console.log('this is working, clicked');

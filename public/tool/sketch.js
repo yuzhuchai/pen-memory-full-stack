@@ -89,7 +89,18 @@ function submit(){
 	wordAttr.blinkSelect = false;
 	dontDraw = false;
 
-	wordAttr.word = $('#pen').val()
+
+	let wordSelected = $('#pen').val()
+	// let wordArr = wordSelected.split('')
+	let lastChar = wordSelected[wordSelected.length-1]
+	if(lastChar === ' '){
+		finalWord = wordSelected.substring(0, wordSelected.length-1)
+	} else {
+		finalWord = wordSelected
+	}
+
+	console.log(finalWord);
+	wordAttr.word = finalWord
 	wordAttr.size = Number($('#size').val())
 	wordAttr.color = color(hexToRgb($('#color').val()).r, hexToRgb($('#color').val()).g, hexToRgb($('#color').val()).b)
 	wordAttr.fr = Number($('#rate').val())
