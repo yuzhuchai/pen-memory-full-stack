@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express()
 const Drawing = require('./models/drawing')
 const drawingController = require('./controllers/drawingController')
-const PORT = process.env.PORT || 9000
+const PORT = process.env.PORT
 
 const db = require('./db/db')
 app.use(bodyParser.urlencoded({extended: false}));
