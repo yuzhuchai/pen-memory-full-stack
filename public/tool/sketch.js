@@ -391,7 +391,7 @@ function upload(){
 	if(history.length && drawn.length){
 		const upAsJsonString = JSON.stringify(history)
 		// console.log(upAsJsonString);
-		$('#uploadForm_form').prepend(`<input name='historyUpload' value=${upAsJsonString} type='text' disabled></input>`)
+		$('#uploadForm_form').prepend(`<input name='historyUpload' id='uploadInput' value=${upAsJsonString} type='text' readonly></input>`)
 		$('#mainContainer').css({'display':'none'})
 		$('canvas').css({'display':'none'})
 		$('#uploadForm').css({'display':'block'})

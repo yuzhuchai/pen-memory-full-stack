@@ -167,9 +167,10 @@
 
     <!-- this is the biginning of the upload container,  -->
     <div id='uploadForm'>
+      <button id='closeForm'>X</button>
     	<form id='uploadForm_form' action='/upload' method='POST'>
         <div>
-    	   <i>(these are the history of your pen, you cannot edit them)</i>
+    	   <i>(these are the history of your pen, please do not edit them)</i>
        </div>
       <div>
         write down your name <input type='text' name='user'>
@@ -222,6 +223,13 @@
 
         $('#close').on('click',() => {
             $('#ruleContainer').css({'display':'none'})
+        })
+
+        $('#closeForm').on('click',() => {
+            // $('#uploadInput').remove()
+            $('#uploadForm').css({'display':'none'})
+            $('#mainContainer').css({'display':'flex'})
+            $('canvas').css({'display':'block'})
         })
 
     </script>
