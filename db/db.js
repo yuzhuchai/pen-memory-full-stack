@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
-const connectionString = 'mongodb://localhost/toolhistory'
-
+let connectionString
+if(process.env.NODE_ENV === 'production'){
+	connectionString = process.env.DB_URL
+} else {
+	connectionString = 'mongodb://localhost/drawings'
+}
 
 
 mongoose.connect(connectionString, {
