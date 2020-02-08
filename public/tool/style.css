@@ -52,7 +52,7 @@ canvas {
 #mainContainer {
 	padding: 10px;
 	display: flex;
-	width: 30vw;
+	width: 25vw;
 	height: 100vh;
 	flex-direction: row;
 	flex-wrap: wrap;
