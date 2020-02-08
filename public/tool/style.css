@@ -139,3 +139,43 @@ canvas {
 .indexSpan{
 	display: none;
 }
+
+
+
+#ruleContainer{
+	position: absolute;
+	display: block;
+	border: rgba(255,255,255,0.2) 3px solid;
+	border-radius: 5px;
+	color: cornflowerblue;
+	z-index: 100000;
+	width: 60vw;
+	min-height: 60vh;
+	left: 20vw;
+	top: 20vh;
+	background-color: rgba(0,0,0,0.9);
+	font-style: bolder;
+	font-size: 1.2em;
+	padding: 10px;
+	line-height: 1.9em;
+	text-align: center;
+}
+
+.ruleSpan {
+	color: white;
+	/*text-decoration: none;*/
+	border: white 1px solid;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+#ruleContainer > button {
+	border: 1px solid white;
+	background-color: black;
+	color: white;
+	padding:.2em;
+	position: relative;
+	left: 10px;
+	padding: .3em;
+	border-radius: 5px;
+}

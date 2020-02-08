@@ -12,8 +12,23 @@
   </head>
   <body>
 
+
+        <div id='ruleContainer'>
+          <button>X</button>
+          <p>
+              make a drawing, write a story.<br/>
+              press <span class='ruleSpan'>tab</span> to display/hide tool bar.<br/> 
+              after selecting the basic pen functions, click <span class='ruleSpan'>write</span> to use pen.<br/>
+              click <span class='ruleSpan'>replace</span> to replace the drawing with one color or word.<br/>
+              click <span class='ruleSpan'>erase</span> to undo.<br/>
+              use <span class='ruleSpan'>memories</span> to see history.<br/>
+              <span class='ruleSpan'>upuload</span> your pens and a story for others to use.
+          </p>
+        </div>
     <!-- this is the main container for selecting tools -->
     <div id='mainContainer'>
+
+
 
         <div id='selectorContainer' class='sectionContainer largeContainer'>
           <!-- <h3>select your brush!</h3> -->
@@ -27,7 +42,7 @@
 <!-- select color -->
             <div>
               <label for='color'>color</label>
-              <input type="color" id="color" class='color' name='color' value="#0000ff"/>
+              <input type="color" id="color" class='color' name='color' value='#6495ed'/>
             </div>
 
 
@@ -115,7 +130,7 @@
         <div class='sectionContainer smallContainer'>
           <div>
               <!-- <label for='color1'>replace</label> -->
-              <input type="color" id="color1" class='color' value="#0000ff"/>
+              <input type="color" id="color1" class='color' value="#6495ed"/>
             </div>
             <div>
               <button class='color' onClick='changeColor()'>replace</button>
@@ -136,7 +151,7 @@
 
         <div class='sectionContainer'>
           <div>
-            <button onClick='upload()'>camera</button>
+            <button onClick='upload()'>upload</button>
           </div>
           <a href='/index'>go to home page</a>
         </div> 
