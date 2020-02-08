@@ -25,7 +25,7 @@ canvas {
 	left: 30vw;
 	width: 50vw;
 	height: 90vh;
-	/*cursor: crosshair;*/
+	cursor: crosshair;
 	cursor: none;
 	/*z-index: -1;*/
 }

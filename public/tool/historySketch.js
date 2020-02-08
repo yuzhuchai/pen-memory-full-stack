@@ -88,7 +88,7 @@ function selectHistory(){
 	wordAttr.fallSelect = false;
 	wordAttr.danceSelect = false;
 	wordAttr.blinkSelect = false;
-	dontDraw = false;
+	dontDraw = true;
 
 
 	// console.log('this is working, clicked');
@@ -101,6 +101,8 @@ function selectHistory(){
 	// wordAttr.color = rgbColor 
 	wordAttr.color = color(rgbColor[0], rgbColor[1], rgbColor[2])
 	console.log(wordAttr.color,'<-------new color ');
+
+	$('.sectionContainer').css({'display':'none'})
 }
 
 
